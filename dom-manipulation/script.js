@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     newQuoteButton.addEventListener('click', showRandomQuote);
 
     // Function to add a new quote without using createElement or appendChild
-    window.AddQuoteForm = function() {
+    window.createAddQuoteForm = function() {
         const newQuoteText = document.getElementById('newQuoteText').value.trim();
         const newQuoteCategory = document.getElementById('newQuoteCategory').value.trim();
         if (newQuoteText && newQuoteCategory) {
