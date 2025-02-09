@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { text: "The purpose of our lives is to be happy.", category: "Happiness" },
     ];
 
-    // Function to display a random quote
+    // Function to display a random quote using innerHTML
     function showRandomQuote() {
         const randomIndex = Math.floor(Math.random() * quotes.length);
         const randomQuote = quotes[randomIndex];
-        quoteDisplay.textContent = `"${randomQuote.text}" - ${randomQuote.category}`;
+        quoteDisplay.innerHTML = `"${randomQuote.text}" - <strong>${randomQuote.category}</strong>`;
     }
 
     // Event listener for showing a new quote
