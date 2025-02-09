@@ -17,13 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listener for showing a new quote
     newQuoteButton.addEventListener('click', showRandomQuote);
 
-    // Function to add a new quote
-    window.createAddQuoteForm = function() {
+    // Function to add a new quote without using createElement or appendChild
+    window.AddQuoteForm = function() {
         const newQuoteText = document.getElementById('newQuoteText').value.trim();
         const newQuoteCategory = document.getElementById('newQuoteCategory').value.trim();
         if (newQuoteText && newQuoteCategory) {
             quotes.push({ text: newQuoteText, category: newQuoteCategory });
             alert("Quote added successfully!");
+
+            // Update the innerHTML of the quoteDisplay with the new quote
+            quoteDisplay.innerHTML += `<p>"${newQuoteText}" - <strong>${newQuoteCategory}</strong></p>`;
         } else {
             alert("Please enter both a quote and a category.");
         }
